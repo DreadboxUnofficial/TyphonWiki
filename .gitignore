@@ -1,0 +1,7 @@
+# Editor droppings
+~
+*.swp
+
+# binaries
+hugo
+hugo.exe

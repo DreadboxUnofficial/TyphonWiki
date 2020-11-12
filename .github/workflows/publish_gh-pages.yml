@@ -1,0 +1,45 @@
+# This is based on https://medium.com/zendesk-engineering/a-github-actions-workflow-to-generate-publish-your-hugo-website-f36375e56cf7
+#                  https://gist.githubusercontent.com/superpeteblaze/927aa85e9ed09682a6f3dc01b26e3736/raw/a215b81c08f051e752d1aaa38dbedabfc913a899/hugo_gh-pages.yml
+
+# Workflow to build and deploy site to Github Pages using Hugo
+
+# Name of Workflow
+name: publish to github pages
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "deploy"
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+          submodules: true  # Fetch Hugo themes
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+          hugo-version: 'latest'
+
+    - name: Clean public directory
+      run: rm -rf public
+
+    - name: Build
+      run: hugo --theme=fresh
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
