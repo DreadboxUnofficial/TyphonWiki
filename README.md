@@ -7,3 +7,18 @@ Once I have the publishing working, I'll add links to the formatted docs and inf
 
 Cheers,
 Patrick
+
+
+
+
+
+## Work in Progress - Using Hugo
+
+Get Hugo - be sure to use the extended version from https://github.com/gohugoio/hugo/releases.
+
+```
+cd docs
+hugo server --minify --theme book
+```
+
+Browse to the URL in the Hugo output - probably http://localhost:1313/
