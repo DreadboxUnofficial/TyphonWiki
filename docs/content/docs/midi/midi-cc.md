@@ -1,7 +1,6 @@
 ---
 title: "Midi Cc"
 date: 2020-11-11T22:16:55-08:00
-draft: true
 ---
 
 
