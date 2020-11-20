@@ -36,7 +36,7 @@ jobs:
       run: rm -rf public
 
     - name: Build
-      run: hugo --theme=fresh
+      run: hugo -l docs --minify --theme book
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
