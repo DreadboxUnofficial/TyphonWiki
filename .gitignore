@@ -1,7 +1,10 @@
 # Editor droppings
-~
+*~
 *.swp
 
 # binaries
 hugo
 hugo.exe
+
+# Hugo temporary paths
+docs/resources/_gen
