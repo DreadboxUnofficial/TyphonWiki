@@ -14,7 +14,9 @@ Patrick
 
 ## Work in Progress - Using Hugo
 
-Get Hugo - be sure to use the extended version from https://github.com/gohugoio/hugo/releases.
+
+1. Sync the submodules `git submodule init` then `git submodule update`. Make sure there are files in `themes/book`
+1. Get Hugo - be sure to use the extended version from https://github.com/gohugoio/hugo/releases.
 
 ```
 cd docs
