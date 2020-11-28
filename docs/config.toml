@@ -27,16 +27,6 @@ enableGitInfo = true
   weight = 1
 
 [menu]
-# [[menu.before]]
-[[menu.after]]
-  name = "Github"
-  url = "https://github.com/alex-shpak/hugo-book"
-  weight = 10
-
-[[menu.after]]
-  name = "Hugo Themes"
-  url = "https://themes.gohugo.io/hugo-book/"
-  weight = 20
 
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.
