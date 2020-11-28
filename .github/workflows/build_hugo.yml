@@ -4,12 +4,14 @@
 # Workflow to build and deploy site to Github Pages using Hugo
 
 # Name of Workflow
-name: publish to github pages
+name: Build a Pull Request
 
 # Controls when the action will run. Triggers the workflow on push only for the main branch
 on:
-  push:
+  pull_request:
     branches: [ main ]
+    paths:
+    - 'docs/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -37,9 +39,3 @@ jobs:
 
     - name: Build
       run: cd docs && hugo --minify --theme book
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/public
