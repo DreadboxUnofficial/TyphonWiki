@@ -5,13 +5,14 @@ date: 2020-11-11T22:16:55-08:00
 
 # MIDI CC List
 
-This is the list of MIDI CC, as of firmware v2.0.1. All are CC, so far there aren't any NRPN.
+This is the list of MIDI CC, as of firmware v2.0.2. All are CC, so far there aren't any NRPN.
 
 
 CC# | Function | Notes
 ----|----------|-------
+0 |  BANK SELECT | Added in 2.0.2. Set this CC first to pick the bank (1=A, 2=B, 3=C, 4=D), then send a MIDI program change to select a preset
 1 |  MOD WHEEL |
-2 |  CC2 |
+2 |  CC2 | Assignable in CC2 Target Menu: CV.0, CV1.0, CV2.0, WAVE.0, CUT.0, RES.0, EGL.0, VCA.0, FX1.0, FFM.0, FX2.0, DLAY.0 or FX3.0
 3 |  RESONANCE |
 4 |  CUTOFF |
 5 |  WAVESHAPE |
@@ -41,7 +42,7 @@ CC# | Function | Notes
 29 |  FILTER EG SUSTAIN |
 30 |  FILTER EG RELEASE |
 31 |  FILTER EG TIME |
-... |     |
+32 |     | (Reserved - some synths send this after CC#0 during a program change)
 33 |  FILTER EG LEVEL |
 34 |  VCA EG ATTACK |
 35 |  VCA EG DECAY |
@@ -107,4 +108,4 @@ CC# | Function | Notes
 ## Reference Docs
 
 
-- The firmware update ZIP files (latest: [TYPHON-Firmware-Update-V2.01.zip](https://www.dreadbox-fx.com/wp-content/uploads/2020/10/TYPHON-Firmware-Update-V2.01.zip) ) have a PDF with detailed release notes. It includes the changes to MIDI CC in each version.
+- The firmware update ZIP files (latest: [TYPHON-Firmware-Update-V2.0.2.zip](https://www.dreadbox-fx.com/wp-content/uploads/2020/12/TYPHON-Firmware-Update-V2.0.2.zip) ) have a PDF with detailed release notes. It includes the changes to MIDI CC in each version.
